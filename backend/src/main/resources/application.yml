@@ -1,0 +1,14 @@
+server:
+    port: 8080
+
+spring:
+    datasource:
+        url: jdbc:mysql://assistdb-atharva9arvin-3899.a.aivencloud.com:18554/defaultdb
+        username: avnadmin
+        password: AVNS_fij3HfcL0zqAzmoRuGd
+    jpa:
+        hibernate:
+            ddl-auto: none
+            
+jwt:
+     secret: 992bdf1ee9906e49610f8bc71c78274a202c73f749084e6d08799aace4a00547
