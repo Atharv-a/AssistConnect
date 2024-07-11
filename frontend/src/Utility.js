@@ -1,4 +1,4 @@
-import toast from "react-hot-toast";
+import toast from 'react-hot-toast'
 
 export default function errorMessage(message,id=null){
     toast(message,{
