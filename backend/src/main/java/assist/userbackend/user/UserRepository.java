@@ -1,14 +1,11 @@
-package assist.userbackend.repository;
+package assist.userbackend.user;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import assist.userbackend.entity.User;
 
 public interface UserRepository extends JpaRepository<User,Integer>{
     
     Optional<User> findByEmail(String email);
-    
 }
-

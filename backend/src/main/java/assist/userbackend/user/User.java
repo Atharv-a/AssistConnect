@@ -1,4 +1,5 @@
-package assist.userbackend.entity;
+package assist.userbackend.user;
+
 
 import java.util.Collection;
 import java.util.List;
@@ -7,7 +8,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -20,33 +20,32 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "user")
-public class User implements UserDetails{
-    
+@Table(name = "_user")
+public class User implements UserDetails { 
+   
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(unique = true)
-    private String email;
     private String firstname;
     private String lastname;
+    private String email;
     private String password;
-
+    
     @Enumerated(EnumType.STRING)
     private Role role;
-    
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
-       
     }
     @Override
-    public String getUsername() {
+    public String getUsername() {  
         return email;
     }
     @Override
@@ -65,5 +64,4 @@ public class User implements UserDetails{
     public boolean isEnabled() {
         return true;
     }
-    //password is overridden by lombok
 }

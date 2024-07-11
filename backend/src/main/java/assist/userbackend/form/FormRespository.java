@@ -1,8 +1,6 @@
-package assist.userbackend.repository;
+package assist.userbackend.form;
 
 import org.springframework.data.repository.CrudRepository;
-
-import assist.userbackend.entity.Form;
 
 
 public interface FormRespository extends

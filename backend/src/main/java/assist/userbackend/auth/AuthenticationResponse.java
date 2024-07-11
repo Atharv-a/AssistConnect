@@ -1,4 +1,5 @@
-package assist.userbackend.dto;
+package assist.userbackend.auth;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
